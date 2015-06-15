@@ -121,7 +121,7 @@
     var single_html =
         '<span class="irs-bar-edge"></span>' +
         '<span class="irs-shadow shadow-single"></span>' +
-        '<span class="irs-slider single"></span>';
+        '<span class="irs-slider single"><span class="irs-target"></span></span>';
 
     var double_html =
         '<span class="irs-shadow shadow-from"></span>' +
@@ -522,6 +522,9 @@
 
             this.$cache.line.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
             this.$cache.line.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+            this.$cache.grid.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            this.$cache.grid.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
 
             if (this.options.drag_interval && this.options.type === "double") {
                 this.$cache.bar.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "both"));
